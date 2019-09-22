@@ -25,7 +25,7 @@
                 <thead align="center">
                 <tr>
                     {% for phone in phones %}
-                          <th><font size="5"><a href="{{phone.slug}}">{{phone.name}}</a></font></th>
+                          <th><font size="5"><a href="{{ phone.slug }}">{{phone.name}}</a></font></th>
                     {% endfor %}
                 </tr>
                 </thead>
@@ -33,7 +33,7 @@
                 <tr>
                     {% for phone in phones %}
                     <td>
-                        Cтоимость: {{phone.price}}р.
+                        Cтоимость: {{ phone.price }}р.
                     </td>
                     {% endfor %}
                 </tr>

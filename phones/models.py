@@ -10,6 +10,9 @@ class Phone(models.Model):
     lte_exists = models.BooleanField('Наличие LTE')
     slug = models.SlugField('Идентификатор')
 
+    def __str__(self):
+        return self.name
+
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name, allow_unicode=True)
         super(Phone, self).save(*args, **kwargs)

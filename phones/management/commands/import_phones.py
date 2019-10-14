@@ -7,10 +7,11 @@ from phones.models import Phone
 
 class Command(BaseCommand):
     def add_arguments(self, parser):
-        pass
+        parser.add_argument('file')
 
     def handle(self, *args, **options):
-        with open('phones.csv', 'r') as csvfile:
+        filename = options['file']
+        with open(filename, 'r') as csvfile:
 
             phone_reader = csv.DictReader(csvfile, delimiter=';')
 
